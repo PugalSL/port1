@@ -1,4 +1,14 @@
-/* Style for the navigation bar on desktop screens */
+/* Header Styling */
+header {
+    background-color: #4CAF50;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    font-size: 24px;
+    font-family: Arial, sans-serif;
+}
+
+/* Navigation Bar Styling */
 nav ul {
     list-style-type: none;
     margin: 0;
@@ -16,29 +26,87 @@ nav ul li a {
     display: block;
     padding: 14px 20px;
     color: white;
-    text-align: center;
     text-decoration: none;
+    font-family: Arial, sans-serif;
 }
 
 nav ul li a:hover {
     background-color: #575757;
 }
+/* Grid layout for blog posts */
+.blog-posts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
 
-/* Responsive design: On smaller screens, the navigation becomes vertical */
+.post {
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+/* Responsive for smaller screens */
+@media screen and (max-width: 800px) {
+    .blog-posts {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 @media screen and (max-width: 600px) {
-    nav ul {
-        flex-direction: column;
-        align-items: center;
+    .blog-posts {
+        grid-template-columns: 1fr;
     }
+}
+/* Hover effect for links */
+a:hover {
+    color: #4CAF50;
+    text-decoration: underline;
+}
 
-    nav ul li {
-        margin-right: 0;
-        width: 100%;
-    }
+/* Hover effect for buttons */
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
 
-    nav ul li a {
-        text-align: left;
-        padding: 10px;
-        width: 100%;
-    }
+button:hover {
+    background-color: #45a049;
+}
+/* CSS Variables for theming */
+:root {
+    --primary-color: #4CAF50;
+    --secondary-color: #333;
+    --text-color: white;
+    --hover-color: #575757;
+}
+
+/* Using the variables */
+header {
+    background-color: var(--primary-color);
+    color: var(--text-color);
+}
+
+nav ul {
+    background-color: var(--secondary-color);
+}
+
+nav ul li a {
+    color: var(--text-color);
+}
+
+nav ul li a:hover {
+    background-color: var(--hover-color);
+}
+
+button {
+    background-color: var(--primary-color);
+}
+
+button:hover {
+    background-color: var(--hover-color);
 }
